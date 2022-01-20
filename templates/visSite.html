@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}
+    Testy HTTP
+{% endblock %}
+
+{% block meta %}
+    <meta http-equiv="refresh" content="15">
+{% endblock %}
+
+{% block content %}
+        <h1>Najważniejsze co mają problem tutaj (kod HTTP inny niż 200)<br>Odświeżam sie co 15 sekund bo prace nad dynamicznym ajaxem jeszcze trwają ;)</h1>
+    <table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <!-- Your Columns HERE -->
+            <th scope="col">ID</th>
+            <th scope="col">URl</th>
+            <th scope="col">STATUS_CODE</th>
+            <th scope="col">DATE</th>
+            <th scope="col">ERRORS</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for item in item2 %}
+    <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.url }}</td>
+                <td>{{ item.status_code }}</td>
+                <td>{{ item.dataTime }}</td>
+                <td>{{ item.error }}</td>
+                <td>
+                    <button type="button" class="btn btn-light"><a href="{{ item.url }}" target="_blank">Przejdź do strony</a></button>
+                    <button type="button" class="btn btn-warning"><a href="https://memy.memsekcja.pl/images/6spAGJZ.420.mem.jpeg" target="_blank">Czytopotrzebne?</a></button>
+                </td>
+            </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+
+    <h1>Statusy z odpytywania wszystkich stron</h1>
+    <table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <!-- Your Columns HERE -->
+            <th scope="col">ID</th>
+            <th scope="col">URl</th>
+            <th scope="col">STATUS_CODE</th>
+            <th scope="col">DATE</th>
+            <th scope="col">ERRORS</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for item in item1 %}
+    <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.url }}</td>
+                <td>{{ item.status_code }}</td>
+                <td>{{ item.dataTime }}</td>
+                <td>{{ item.error }}</td>
+                <td>
+                    <button type="button" class="btn btn-light"><a href="{{ item.url }}" target="_blank">Przejdź do strony</a></button>
+                    <button type="button" class="btn btn-warning"><a href="https://memy.memsekcja.pl/images/6spAGJZ.420.mem.jpeg" target="_blank">Czytopotrzebne?</a></button>
+                </td>
+            </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock %}
+
