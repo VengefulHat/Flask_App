@@ -21,7 +21,7 @@ class databaseModel(db.Model):
     error = db.Column(db.String(), nullable=False)
 
     def __repr__(self):
-        return f"Rekord(url = {url}, status_code = {status_code}, dataTime = {dataTime}, error = {error})"
+        return 'hello' #f"Rekord(url = {url}, status_code = {status_code}, dataTime = {dataTime}, error = {error})"
 
 
 class errorTime(db.Model):
@@ -32,7 +32,7 @@ class errorTime(db.Model):
     error = db.Column(db.String(), nullable=False)
 
     def __repr__(self):
-        return f"Rekord(url = {url}, status_code = {status_code}, dataTime = {dataTime}, error = {error})"
+        return 'hello' #f"Rekord(url = {url}, status_code = {status_code}, dataTime = {dataTime}, error = {error})"
 
 
 class alliwantALL(db.Model):
@@ -43,7 +43,7 @@ class alliwantALL(db.Model):
     error = db.Column(db.String(), nullable=False)
 
     def __repr__(self):
-        return f"Rekord(url = {url}, status_code = {status_code}, dataTime = {dataTime}, error = {error})"
+        return 'hello' #f"Rekord(url = {url}, status_code = {status_code}, dataTime = {dataTime}, error = {error})"
 
 
 class alliwantWRONG(db.Model):
@@ -54,7 +54,7 @@ class alliwantWRONG(db.Model):
     error = db.Column(db.String(), nullable=False)
 
     def __repr__(self):
-        return f"Rekord(url = {url}, status_code = {status_code}, dataTime = {dataTime}, error = {error})"
+        return 'hello' #f"Rekord(url = {url}, status_code = {status_code}, dataTime = {dataTime}, error = {error})"
 
 # pierdolony createall 3eba zawsze odkomentować iedy dodaje się nowy model bazy dla 'utworzenia jej'
 #db.create_all()
