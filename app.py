@@ -128,6 +128,12 @@ def http_number_all_i_want():
     return render_template('visSiteall.html', item11=source1, item22=source2)
 
 
+def delete_record(num):
+    result = alliwantWRONG.query.filter_by(id=num).one()
+    db.session.delete(result)
+    db.session.commit()
+    return
+
 @app.route('/setData', methods=["GET", "POST"])
 def setData():
     data = [time() * 1000, random() * 100]
@@ -291,7 +297,10 @@ class all_i_want_WRONG(Resource):
         db.session.commit()
         return miarka, 201
 
-    pass
+    def delete(self, num):
+        result = alliwantWRONG.query.filter_by(id=num).one()
+        db.session.delete(result)
+        db.session.commit()
 
 api.add_resource(HelloWorld, "/toja")
 api.add_resource(api2, '/aaa')
