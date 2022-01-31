@@ -165,7 +165,7 @@ def abort_nie_ma(dane):
 dane = {"name": {"age": 14, "gender": "male"}}
 
 
-@app.route('/')
+
 @app.route('/home')
 def home_page():
     return render_template('home.html')
@@ -216,7 +216,7 @@ def regist_er():
             flash(f'Wystapił błąd przy próbie rejestracji: {err_msg}', category='danger')
     return render_template('register.html', form=form)
 
-
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
     form = LoginForm()
