@@ -116,7 +116,7 @@ class alliwantWRONG(db.Model):
     def __repr__(self):
         return 'hello' #f"Rekord(url = {url}, status_code = {status_code}, dataTime = {dataTime}, error = {error})"
 
-# pierdolony createall 3eba zawsze odkomentować iedy dodaje się nowy model bazy dla 'utworzenia jej'
+#3eba zawsze odkomentować kiedy dodaje się nowy model bazy dla 'utworzenia jej'
 #db.create_all()
 
 
@@ -150,14 +150,9 @@ resource_fields = {
     'dataTime': fields.String,
     'error': fields.String
 }
-
-###### Tu jest nasza dynamiczna cipeczka
-
 url_check = []
 fraud_url = []
 #url_check = [{'id': 1, 'url': 'www', 'status_code': '200', 'dataTime': '23:22:34', 'error': 'noWAY'}]
-
-#####
 
 # wyjątki i to co ma być, czyli informacja o tym co jest a czego nie ma ;)
 
@@ -269,7 +264,6 @@ class HelloWorld(Resource):
 
 """
 Za pomocą danych poniżej wstawiam dane i je pobieram - ale ze zemnej słownikowej (zapisuje je jako json) 
-I towszystko działa elegancko, chyba ten zapis do bazy to bedzie raz na dzień i 3eba się mocno zastanowić co dokładnie
 """
 
 class apiA(Resource):
@@ -296,7 +290,7 @@ class api_for_http_wrong(Resource):
 
 
 class api_for_hhtp(Resource):
-    # udało sie jakoś z kombinatorstwa zrobić to, działało z przykładu z yt i zrobiłem podobnie
+    # udało sie jakoś z kombinatorstwa zrobić to
     # zapisuje jsona do tablicy, każdy json jako osobny elemet i jest ok 18.01
     # mały update 20.01 udało się zrobić pobożemu
     # zapis w bazie danych i jej pełna eksploatacja
@@ -322,7 +316,6 @@ class api_for_hhtp(Resource):
     @marshal_with(resource_fields)
     def patch(self, num):
         # patch to updata jkc
-        # nie kraść kodu bo wpierdol
         args = http_put_status_code_update.parse_args()
         result = databaseModel.query.filter_by(id=num).first()
 
@@ -365,7 +358,6 @@ class all_i_want(Resource):
     @marshal_with(resource_fields)
     def patch(self, num):
         # patch to updata jkc
-        # nie kraść kodu bo wpierdol
         args = http_put_status_code_update.parse_args()
         result = alliwantALL.query.filter_by(id=num).first()
 
